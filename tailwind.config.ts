@@ -52,6 +52,12 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// East African inspired colors
+				safari: 'hsl(var(--safari-green))',
+				sunset: 'hsl(var(--sunset-orange))',
+				terracotta: 'hsl(var(--terracotta))',
+				golden: 'hsl(var(--golden-sand))',
+				earth: 'hsl(var(--earth-brown))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -62,6 +68,15 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				}
+			},
+			backgroundImage: {
+				'gradient-sunset': 'var(--gradient-sunset)',
+				'gradient-safari': 'var(--gradient-safari)',
+				'gradient-hero': 'var(--gradient-hero)',
+			},
+			boxShadow: {
+				'warm': 'var(--shadow-warm)',
+				'soft': 'var(--shadow-soft)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
