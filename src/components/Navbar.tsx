@@ -50,7 +50,7 @@ const Navbar = () => {
             <Button 
               variant="ghost" 
               size="sm"
-              onClick={() => window.open('tel:+1234567890', '_self')}
+              onClick={() => window.open('tel:+254716073759', '_self')}
               className="flex items-center space-x-1"
             >
               <Phone className="h-4 w-4" />
@@ -59,7 +59,7 @@ const Navbar = () => {
             <Button 
               variant="golden" 
               size="sm"
-              onClick={() => window.open('https://wa.me/1234567890', '_blank')}
+              onClick={() => window.open('https://wa.me/+254716073759', '_blank')}
               className="flex items-center space-x-1"
             >
               <MessageCircle className="h-4 w-4" />
@@ -98,7 +98,7 @@ const Navbar = () => {
               <Button 
                 variant="ghost" 
                 size="sm"
-                onClick={() => window.open('tel:+1234567890', '_self')}
+                onClick={() => window.open('tel:+254716073759', '_self')}
                 className="flex items-center space-x-2 w-full justify-start"
               >
                 <Phone className="h-4 w-4" />
@@ -107,7 +107,7 @@ const Navbar = () => {
               <Button 
                 variant="golden" 
                 size="sm"
-                onClick={() => window.open('https://wa.me/1234567890', '_blank')}
+                onClick={() => window.open('https://wa.me/+254716073759', '_blank')}
                 className="flex items-center space-x-2 w-full justify-start"
               >
                 <MessageCircle className="h-4 w-4" />

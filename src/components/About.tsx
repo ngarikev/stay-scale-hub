@@ -27,7 +27,7 @@ const About = () => {
   ];
 
   const achievements = [
-    { number: "500+", label: "Happy Guests" },
+    { number: "300+", label: "Happy Guests" },
     { number: "4.9", label: "Average Rating" },
     { number: "15+", label: "Properties" },
     { number: "3", label: "Countries" }
@@ -43,8 +43,8 @@ const About = () => {
             <span className="block text-primary">East African Adventures</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Founded with a passion for showcasing the incredible beauty and hospitality of East Africa, 
-            we specialize in providing luxury accommodations that offer authentic cultural experiences 
+            Founded with a passion for showcasing the incredible beauty and hospitality of East Africa,
+            we specialize in providing luxury accommodations that offer authentic cultural experiences
             while maintaining the highest standards of comfort and service.
           </p>
         </div>
@@ -67,16 +67,30 @@ const About = () => {
         {/* Stats */}
         <div className="bg-gradient-safari rounded-2xl p-8 mb-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {achievements.map((achievement, index) => (
-              <div key={index}>
-                <div className="text-3xl md:text-4xl font-bold text-white mb-2">
-                  {achievement.number}
+            {achievements.map((achievement, index) => {
+              // Start of conditional logic for the label
+              let displayLabel = achievement.label; // Default to the original label
+
+              // Check if the current achievement is 'Countries'
+              if (achievement.label === "Countries") {
+                const numericValue = parseInt(achievement.number.replace("+", ""), 10);
+
+                // Apply conditional rendering for singular/plural
+                displayLabel = numericValue > 1 ? "Countries" : "Country";
+              }
+              // End of conditional logic
+
+              return (
+                <div key={index}>
+                  <div className="text-3xl md:text-4xl font-bold text-white mb-2">
+                    {achievement.number}
+                  </div>
+                  <div className="text-white/80 text-sm uppercase tracking-wide">
+                    {displayLabel} {/* Use the dynamically determined label */}
+                  </div>
                 </div>
-                <div className="text-white/80 text-sm uppercase tracking-wide">
-                  {achievement.label}
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
 
@@ -86,19 +100,19 @@ const About = () => {
             <h3 className="text-3xl font-bold text-foreground mb-6">Our Story</h3>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                Safari Stays was born from our founder's deep love for East Africa and years of 
-                traveling across Tanzania, Kenya, and Uganda. After countless unforgettable experiences, 
+                Safari Stays was born from our founder's deep love for East Africa and years of
+                traveling across Tanzania, Kenya, and Uganda. After countless unforgettable experiences,
                 we realized the need for accommodations that truly capture the essence of this remarkable region.
               </p>
               <p>
-                Today, we work closely with local communities and property owners to ensure that every 
-                stay not only exceeds your expectations but also contributes positively to the areas you visit. 
-                From luxury safari lodges to coastal retreats, each property is hand-selected for its unique 
+                Today, we work closely with local communities and property owners to ensure that every
+                stay not only exceeds your expectations but also contributes positively to the areas you visit.
+                From luxury safari lodges to coastal retreats, each property is hand-selected for its unique
                 character and commitment to sustainable tourism.
               </p>
               <p>
-                Whether you're seeking adventure in the Serengeti, relaxation on Zanzibar's pristine beaches, 
-                or cultural immersion in vibrant local communities, we're here to make your East African 
+                Whether you're seeking adventure in the Serengeti, relaxation on Zanzibar's pristine beaches,
+                or cultural immersion in vibrant local communities, we're here to make your East African
                 dreams a reality.
               </p>
             </div>
@@ -117,7 +131,7 @@ const About = () => {
                 </div>
               </div>
             </Card>
-            
+
             <Card className="p-6 bg-gradient-to-br from-primary/10 to-safari/10">
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0">
@@ -131,7 +145,7 @@ const About = () => {
                 </div>
               </div>
             </Card>
-            
+
             <Card className="p-6 bg-gradient-to-br from-accent/10 to-golden/10">
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0">

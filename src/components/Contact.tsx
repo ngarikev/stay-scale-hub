@@ -36,7 +36,7 @@ Guests: ${formData.guests}
 Message: ${formData.message}
     `.trim();
     
-    const whatsappUrl = `https://wa.me/1234567890?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/+254716073759?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
     
     toast({
@@ -62,14 +62,14 @@ Message: ${formData.message}
     {
       icon: Phone,
       title: "Phone",
-      details: "+1 (234) 567-890",
-      action: () => window.open('tel:+1234567890', '_self')
+      details: "+254716073759",
+      action: () => window.open('tel:+254716073759', '_self')
     },
     {
       icon: MessageCircle,
       title: "WhatsApp",
       details: "Quick Response",
-      action: () => window.open('https://wa.me/1234567890', '_blank')
+      action: () => window.open('https://wa.me/+254716073759', '_blank')
     },
     {
       icon: Mail,
@@ -80,7 +80,7 @@ Message: ${formData.message}
     {
       icon: MapPin,
       title: "Based in",
-      details: "Nairobi, Kenya",
+      details: "Mombasa, Kenya",
       action: null
     }
   ];

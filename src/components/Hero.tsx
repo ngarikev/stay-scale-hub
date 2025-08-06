@@ -37,7 +37,7 @@ const Hero = () => {
             Explore Properties
           </Button>
           <Button 
-            variant="outline" 
+            variant="hero" 
             size="lg"
             className="text-lg px-8 py-4 border-white/30 text-white hover:bg-white/10"
             onClick={() => window.open('https://wa.me/1234567890', '_blank')}

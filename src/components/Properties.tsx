@@ -79,7 +79,7 @@ const Properties = () => {
             Looking for something specific? We have more properties available.
           </p>
           <button 
-            onClick={() => window.open('https://wa.me/1234567890?text=Hi! I\'d like to see more property options available.', '_blank')}
+            onClick={() => window.open('https://wa.me/+254716073759?text=Hi! I\'d like to see more property options available.', '_blank')}
             className="text-primary hover:text-primary/80 font-semibold underline underline-offset-4"
           >
             View More Properties on WhatsApp

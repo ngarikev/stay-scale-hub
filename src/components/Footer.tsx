@@ -89,10 +89,10 @@ const Footer = () => {
                 <div>
                   <p className="text-white/80 text-sm">Phone</p>
                   <button 
-                    onClick={() => window.open('tel:+1234567890', '_self')}
+                    onClick={() => window.open('tel:+254716073759', '_self')}
                     className="text-white hover:text-golden transition-colors"
                   >
-                    +1 (234) 567-890
+                    +254716073759
                   </button>
                 </div>
               </div>
@@ -102,7 +102,7 @@ const Footer = () => {
                 <div>
                   <p className="text-white/80 text-sm">WhatsApp</p>
                   <button 
-                    onClick={() => window.open('https://wa.me/1234567890', '_blank')}
+                    onClick={() => window.open('https://wa.me/+254716073759', '_blank')}
                     className="text-white hover:text-golden transition-colors"
                   >
                     Quick Response
@@ -127,7 +127,7 @@ const Footer = () => {
                 <MapPin className="h-5 w-5 text-golden mt-0.5" />
                 <div>
                   <p className="text-white/80 text-sm">Based in</p>
-                  <p className="text-white">Nairobi, Kenya</p>
+                  <p className="text-white">Mombasa, Kenya</p>
                 </div>
               </div>
             </div>
