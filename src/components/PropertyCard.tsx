@@ -35,7 +35,7 @@ const PropertyCard = ({
 }: PropertyCardProps) => {
   const handleBookNow = () => {
     const message = `Hi! I'm interested in booking ${name} in ${location}. Could you please share availability and more details?`;
-    const whatsappUrl = `https://wa.me/1234567890?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/+254716073759?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
