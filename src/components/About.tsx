@@ -30,7 +30,7 @@ const About = () => {
     { number: "300+", label: "Happy Guests" },
     { number: "4.9", label: "Average Rating" },
     { number: "15+", label: "Properties" },
-    { number: "3", label: "Countries" }
+    { number: "4", label: "Countries" }
   ];
 
   return (
@@ -101,7 +101,7 @@ const About = () => {
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
                 Safari Stays was born from our founder's deep love for East Africa and years of
-                traveling across Tanzania, Kenya, and Uganda. After countless unforgettable experiences,
+                traveling across Tanzania, Kenya, Ethiopia, and Uganda. After countless unforgettable experiences,
                 we realized the need for accommodations that truly capture the essence of this remarkable region.
               </p>
               <p>
@@ -111,8 +111,8 @@ const About = () => {
                 character and commitment to sustainable tourism.
               </p>
               <p>
-                Whether you're seeking adventure in the Serengeti, relaxation on Zanzibar's pristine beaches,
-                or cultural immersion in vibrant local communities, we're here to make your East African
+                Whether you're seeking adventure in the Serengeti, Masai Mara, the Nile or relaxation to Kenyan's Coastal beaches or Zanzibar's pristine beaches,
+                or cultural immersion in vibrant local communities, we are here to make your East African
                 dreams a reality.
               </p>
             </div>
