@@ -100,7 +100,7 @@ const About = () => {
             <h3 className="text-3xl font-bold text-foreground mb-6">Our Story</h3>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                Safari Stays was born from our founder's deep love for East Africa and years of
+                Vacation Rentals was born from our founder's deep love for East Africa and years of
                 traveling across Tanzania, Kenya, Ethiopia, and Uganda. After countless unforgettable experiences,
                 we realized the need for accommodations that truly capture the essence of this remarkable region.
               </p>
