@@ -37,7 +37,7 @@ const About = () => {
     <section id="about" className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <Badge className="bg-gradient-sunset text-white mb-4">About Safari Stays</Badge>
+          <Badge className="bg-gradient-sunset text-white mb-4">About Vacation Rentals</Badge>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             Your Gateway to
             <span className="block text-primary">East African Adventures</span>
