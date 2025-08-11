@@ -9,19 +9,19 @@ import { MapPin, Phone, Mail, MessageCircle, Clock, Globe } from "lucide-react";
 const Contact = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    property: '',
-    checkIn: '',
-    checkOut: '',
-    guests: '',
-    message: ''
+    name: "",
+    email: "",
+    phone: "",
+    property: "",
+    checkIn: "",
+    checkOut: "",
+    guests: "",
+    message: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Create WhatsApp message
     const message = `
 *New Booking Inquiry*
@@ -35,26 +35,39 @@ Guests: ${formData.guests}
 
 Message: ${formData.message}
     `.trim();
-    
-    const whatsappUrl = `https://wa.me/+254716073759?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
-    
+
+    const whatsappUrl = `https://wa.me/+254716073759?text=${encodeURIComponent(
+      message
+    )}`;
+    window.open(whatsappUrl, "_blank");
+
     toast({
       title: "Redirecting to WhatsApp",
-      description: "Your inquiry is being sent via WhatsApp for faster response.",
+      description:
+        "Your inquiry is being sent via WhatsApp for faster response.",
     });
-    
+
     // Reset form
     setFormData({
-      name: '', email: '', phone: '', property: '', 
-      checkIn: '', checkOut: '', guests: '', message: ''
+      name: "",
+      email: "",
+      phone: "",
+      property: "",
+      checkIn: "",
+      checkOut: "",
+      guests: "",
+      message: "",
     });
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData(prev => ({
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     }));
   };
 
@@ -63,26 +76,26 @@ Message: ${formData.message}
       icon: Phone,
       title: "Phone",
       details: "+254716073759",
-      action: () => window.open('tel:+254716073759', '_self')
+      action: () => window.open("tel:+254716073759", "_self"),
     },
     {
       icon: MessageCircle,
       title: "WhatsApp",
       details: "Quick Response",
-      action: () => window.open('https://wa.me/+254716073759', '_blank')
+      action: () => window.open("https://wa.me/+254716073759", "_blank"),
     },
     {
       icon: Mail,
       title: "Email",
       details: "hello@safaristays.com",
-      action: () => window.open('mailto:hello@safaristays.com', '_self')
+      action: () => window.open("mailto:hello@safaristays.com", "_self"),
     },
     {
       icon: MapPin,
       title: "Based in",
       details: "Mombasa, Kenya",
-      action: null
-    }
+      action: null,
+    },
   ];
 
   return (
@@ -93,8 +106,8 @@ Message: ${formData.message}
             Ready for Your East African Adventure?
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Get in touch with us to plan your perfect stay. We're here to help you 
-            create unforgettable memories in the heart of East Africa.
+            Get in touch with us to plan your perfect stay. We're here to help
+            you create unforgettable memories in the heart of East Africa.
           </p>
         </div>
 
@@ -115,9 +128,11 @@ Message: ${formData.message}
                       <info.icon className="h-5 w-5 text-primary mt-0.5" />
                     </div>
                     <div className="flex-1">
-                      <p className="font-medium text-foreground">{info.title}</p>
+                      <p className="font-medium text-foreground">
+                        {info.title}
+                      </p>
                       {info.action ? (
-                        <button 
+                        <button
                           onClick={info.action}
                           className="text-muted-foreground hover:text-primary transition-colors"
                         >
@@ -138,7 +153,9 @@ Message: ${formData.message}
                   <Clock className="h-5 w-5 text-primary mt-0.5" />
                   <div>
                     <p className="font-medium text-foreground">Response Time</p>
-                    <p className="text-muted-foreground text-sm">Usually within 2 hours</p>
+                    <p className="text-muted-foreground text-sm">
+                      Usually within 2 hours
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
@@ -158,7 +175,8 @@ Message: ${formData.message}
               <CardHeader>
                 <CardTitle>Send us a Message</CardTitle>
                 <p className="text-muted-foreground">
-                  Fill out the form below and we'll get back to you as soon as possible.
+                  Fill out the form below and we'll get back to you as soon as
+                  possible.
                 </p>
               </CardHeader>
               <CardContent>
@@ -214,22 +232,28 @@ Message: ${formData.message}
                         className="w-full px-3 py-2 border border-input rounded-md bg-background text-foreground"
                       >
                         <option value="">Select a property</option>
-                        <option value="Safari Lodge Villa">Safari Lodge Villa</option>
+                        <option value="Safari Lodge Villa">
+                          Safari Lodge Villa
+                        </option>
                         <option value="Coastal Retreat">Coastal Retreat</option>
-                        <option value="Bush Camp Experience">Bush Camp Experience</option>
-                        <option value="Other">Other / Multiple Properties</option>
+                        <option value="Bush Camp Experience">
+                          Bush Camp Experience
+                        </option>
+                        <option value="Other">
+                          Other / Multiple Properties
+                        </option>
                       </select>
                     </div>
                   </div>
 
-                  <div className="grid md:grid-cols-3 gap-4">
+                  <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-foreground mb-2">
                         Check-in Date
                       </label>
                       <Input
                         name="checkIn"
-                        type="date"
+                        type="datetime-local"
                         value={formData.checkIn}
                         onChange={handleChange}
                       />
@@ -240,14 +264,17 @@ Message: ${formData.message}
                       </label>
                       <Input
                         name="checkOut"
-                        type="date"
+                        type="datetime-local"
                         value={formData.checkOut}
                         onChange={handleChange}
                       />
                     </div>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-foreground mb-2">
-                        Number of Guests
+                        No of Adults
                       </label>
                       <select
                         name="guests"
@@ -255,13 +282,32 @@ Message: ${formData.message}
                         onChange={handleChange}
                         className="w-full px-3 py-2 border border-input rounded-md bg-background text-foreground"
                       >
-                        <option value="">Select guests</option>
-                        <option value="1">1 Guest</option>
-                        <option value="2">2 Guests</option>
-                        <option value="3">3 Guests</option>
-                        <option value="4">4 Guests</option>
-                        <option value="5">5 Guests</option>
-                        <option value="6+">6+ Guests</option>
+                        <option value="">Select adults</option>
+                        <option value="1">1 Adult</option>
+                        <option value="2">2 Adults</option>
+                        <option value="3">3 Adults</option>
+                        <option value="4">4 Adults</option>
+                        <option value="5">5 Adults</option>
+                        <option value="6">6 Adults</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-foreground mb-2">
+                        No of Children(3-11YRS)
+                      </label>
+                      <select
+                        name="guests"
+                        value={formData.guests}
+                        onChange={handleChange}
+                        className="w-full px-3 py-2 border border-input rounded-md bg-background text-foreground"
+                      >
+                        <option value="">Select children</option>
+                        <option value="0">No Child</option>
+                        <option value="1">1 Child</option>
+                        <option value="2">2 Children</option>
+                        <option value="3">3 Children</option>
+                        <option value="4">4 Children</option>
+                        <option value="5">5 Children</option>
                       </select>
                     </div>
                   </div>
@@ -279,7 +325,12 @@ Message: ${formData.message}
                     />
                   </div>
 
-                  <Button type="submit" variant="hero" size="lg" className="w-full">
+                  <Button
+                    type="submit"
+                    variant="hero"
+                    size="lg"
+                    className="w-full"
+                  >
                     Send Message via WhatsApp
                   </Button>
                 </form>
