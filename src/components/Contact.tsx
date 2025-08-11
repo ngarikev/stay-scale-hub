@@ -15,7 +15,8 @@ const Contact = () => {
     property: "",
     checkIn: "",
     checkOut: "",
-    guests: "",
+    adults: "",
+    children: "",
     message: "",
   });
 
@@ -31,7 +32,8 @@ Phone: ${formData.phone}
 Property Interest: ${formData.property}
 Check-in: ${formData.checkIn}
 Check-out: ${formData.checkOut}
-Guests: ${formData.guests}
+Adults: ${formData.adults}
+Children: ${formData.children}
 
 Message: ${formData.message}
     `.trim();
@@ -55,7 +57,8 @@ Message: ${formData.message}
       property: "",
       checkIn: "",
       checkOut: "",
-      guests: "",
+      adults: "",
+      children: "",
       message: "",
     });
   };
@@ -277,8 +280,8 @@ Message: ${formData.message}
                         No of Adults
                       </label>
                       <select
-                        name="guests"
-                        value={formData.guests}
+                        name="adults"
+                        value={formData.adults}
                         onChange={handleChange}
                         className="w-full px-3 py-2 border border-input rounded-md bg-background text-foreground"
                       >
@@ -296,8 +299,8 @@ Message: ${formData.message}
                         No of Children(3-11YRS)
                       </label>
                       <select
-                        name="guests"
-                        value={formData.guests}
+                        name="children"
+                        value={formData.children}
                         onChange={handleChange}
                         className="w-full px-3 py-2 border border-input rounded-md bg-background text-foreground"
                       >
