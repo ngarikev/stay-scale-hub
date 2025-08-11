@@ -26,7 +26,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <div className="flex items-center space-x-2">
               <MapPin className="h-8 w-8 text-primary" />
-              <span className="text-2xl font-bold text-foreground">Safari Stays</span>
+              <span className="text-2xl font-bold text-foreground">Vacation Rentals</span>
             </div>
           </div>
 
