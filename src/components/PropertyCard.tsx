@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Users, Bed, Bath, Wifi, Car, Star } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 interface PropertyCardProps {
   id: string;
@@ -35,12 +35,10 @@ const PropertyCard = ({
   reviews,
   featured = false,
 }: PropertyCardProps) => {
+  const navigate = useNavigate();
   const handleBookNow = () => {
-    const message = `Hi! I'm interested in booking ${name} in ${location}. Could you please share availability and more details?`;
-    const whatsappUrl = `https://wa.me/+254716073759?text=${encodeURIComponent(
-      message
-    )}`;
-    window.open(whatsappUrl, "_blank");
+    navigate("/property/:id")
+
   };
 
   const amenityIcons: { [key: string]: any } = {
@@ -127,7 +125,7 @@ const PropertyCard = ({
           </div>
 
           <Button onClick={handleBookNow} className="w-full" variant="hero">
-            Book Now via WhatsApp
+            View Property
           </Button>
         </CardContent>
       </Card>
