@@ -111,7 +111,7 @@ const About = () => {
                 character and commitment to sustainable tourism.
               </p>
               <p>
-                Whether you're seeking adventure in the Serengeti, Masai Mara, the Nile or relaxation to Kenyan's Coastal beaches or Zanzibar's pristine beaches,
+                Whether you're seeking adventure in the Serengeti, Maasai Mara, the Nile or relaxation to Kenyan's Coastal beaches or Zanzibar's pristine beaches,
                 or cultural immersion in vibrant local communities, we are here to make your East African
                 dreams a reality.
               </p>
