@@ -1,6 +1,12 @@
 import property1 from "@/assets/property-1.jpg";
 import property2 from "@/assets/property-2.jpg";
 import property3 from "@/assets/property-3.jpg";
+import property4 from "@/assets/property4.png";
+import property5 from "@/assets/property5.png";
+import property6 from "@/assets/property6.png";
+import property7 from "@/assets/property7.png";
+import property8 from "@/assets/property8.png";
+import property9 from "@/assets/property9.png";
 
 export const properties = [
   {
@@ -8,7 +14,7 @@ export const properties = [
     name: "Safari Lodge Villa",
     location: "Serengeti, Tanzania",
     description: "Luxury villa with panoramic savanna views...",
-    images: [property1, property2, property3], // Add more images here
+    images: [property1, property2, property4, property5, property6, property7, property8, property9], // Add more images here
     price: "$450",
     guests: 6,
     bedrooms: 3,
