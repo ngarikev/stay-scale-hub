@@ -87,7 +87,7 @@ Message: ${formData.message}
         <DialogTrigger asChild>
           <Button variant="hero">Reserve Now</Button>
         </DialogTrigger>
-        <DialogContent className="sm:max-w-lg md:max-w-2xl lg:max-w-3xl w-full">
+        <DialogContent className="w-full max-w-4xl p-6">
           <DialogHeader>
             <DialogTitle>Make Your Reservation Now</DialogTitle>
             <DialogDescription>
