@@ -14,6 +14,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { properties } from "@/data/properties";
 import ImageGridCarousel from "@/components/ImageGridCarousel";
+import { DialogBookButton } from "@/components/ui/modal";
 
 const PropertyDetail = () => {
   const { id } = useParams();
@@ -55,7 +56,7 @@ const PropertyDetail = () => {
               <Star className="w-4 h-4 fill-luxury-gold text-luxury-gold" />
               <span className="font-medium">{property.rating}</span>
             </div>
-            <Button variant="hero">Reserve Now</Button>
+            <DialogBookButton />
           </div>
         </div>
       </div>
