@@ -90,8 +90,8 @@ Message: ${formData.message}
     {
       icon: Mail,
       title: "Email",
-      details: "hello@safaristays.com",
-      action: () => window.open("mailto:hello@safaristays.com", "_self"),
+      details: "hello@azurehorizonstays.com",
+      action: () => window.open("mailto:hello@azurehorizonstays.com", "_self"),
     },
     {
       icon: MapPin,

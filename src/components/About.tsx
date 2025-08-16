@@ -37,7 +37,7 @@ const About = () => {
     <section id="about" className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <Badge className="bg-gradient-sunset text-white mb-4">About Vacation Rentals</Badge>
+          <Badge className="bg-gradient-sunset text-white mb-4">About Azure Horizon Stays</Badge>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             Your Gateway to
             <span className="block text-primary">East African Adventures</span>
@@ -100,7 +100,7 @@ const About = () => {
             <h3 className="text-3xl font-bold text-foreground mb-6">Our Story</h3>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                Vacation Rentals was born from our founder's deep love for East Africa and years of
+                Azure Horizon Stays was born from our founder's deep love for East Africa and years of
                 traveling across Tanzania, Kenya, Ethiopia, and Uganda. After countless unforgettable experiences,
                 we realized the need for accommodations that truly capture the essence of this remarkable region.
               </p>

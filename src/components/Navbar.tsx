@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, MapPin, Phone, MessageCircle } from "lucide-react";
+import { Input } from "./ui/input";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,8 +14,8 @@ const Navbar = () => {
   ];
 
   const scrollToSection = (href: string) => {
-    const element = document.getElementById(href.replace('#', ''));
-    element?.scrollIntoView({ behavior: 'smooth' });
+    const element = document.getElementById(href.replace("#", ""));
+    element?.scrollIntoView({ behavior: "smooth" });
     setIsOpen(false);
   };
 
@@ -26,7 +27,9 @@ const Navbar = () => {
           <div className="flex items-center">
             <div className="flex items-center space-x-2">
               <MapPin className="h-8 w-8 text-primary" />
-              <span className="text-2xl font-bold text-foreground">Vacation Rentals</span>
+              <span className="text-2xl font-bold text-foreground">
+                Azure Horizon Stays
+              </span>
             </div>
           </div>
 
@@ -47,7 +50,10 @@ const Navbar = () => {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button 
+            <Input 
+             name="name" 
+             placeholder="Search...." />
+            {/* <Button 
               variant="ghost" 
               size="sm"
               onClick={() => window.open('tel:+254716073759', '_self')}
@@ -55,11 +61,13 @@ const Navbar = () => {
             >
               <Phone className="h-4 w-4" />
               <span>Call</span>
-            </Button>
-            <Button 
-              variant="golden" 
+            </Button> */}
+            <Button
+              variant="golden"
               size="sm"
-              onClick={() => window.open('https://wa.me/+254716073759', '_blank')}
+              onClick={() =>
+                window.open("https://wa.me/+254716073759", "_blank")
+              }
               className="flex items-center space-x-1"
             >
               <MessageCircle className="h-4 w-4" />
@@ -75,7 +83,11 @@ const Navbar = () => {
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center p-2"
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
             </Button>
           </div>
         </div>
@@ -95,19 +107,24 @@ const Navbar = () => {
               </button>
             ))}
             <div className="pt-4 pb-2 border-t border-border space-y-2">
-              <Button 
-                variant="ghost" 
+              <Input 
+              name="name"  
+              placeholder="Search...." />
+              {/* <Button
+                variant="ghost"
                 size="sm"
-                onClick={() => window.open('tel:+254716073759', '_self')}
+                onClick={() => window.open("tel:+254716073759", "_self")}
                 className="flex items-center space-x-2 w-full justify-start"
               >
                 <Phone className="h-4 w-4" />
                 <span>Call Us</span>
-              </Button>
-              <Button 
-                variant="golden" 
+              </Button> */}
+              <Button
+                variant="golden"
                 size="sm"
-                onClick={() => window.open('https://wa.me/+254716073759', '_blank')}
+                onClick={() =>
+                  window.open("https://wa.me/+254716073759", "_blank")
+                }
                 className="flex items-center space-x-2 w-full justify-start"
               >
                 <MessageCircle className="h-4 w-4" />
