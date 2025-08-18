@@ -14,7 +14,28 @@ import property13 from "@/assets/3br-property13.webp";
 import property14 from "@/assets/3br-property14.webp";
 import property15 from "@/assets/3br-property15.webp";
 
-//2br images
+//3br apartment2 images
+import threebrproperty1 from "@/assets/property1.webp";
+import threebrproperty2 from "@/assets/property2.webp";
+import threebrproperty3 from "@/assets/property3.webp";
+import threebrproperty4 from "@/assets/property4.webp";
+import threebrproperty5 from "@/assets/property5.webp";
+import threebrproperty6 from "@/assets/property6.webp";
+import threebrproperty7 from "@/assets/property7.webp";
+import threebrproperty8 from "@/assets/property8.webp";
+import threebrproperty9 from "@/assets/property9.webp";
+import threebrproperty10 from "@/assets/property10.webp";
+import threebrproperty11 from "@/assets/property11.webp";
+import threebrproperty12 from "@/assets/property12.webp";
+import threebrproperty13 from "@/assets/property13.webp";
+import threebrproperty14 from "@/assets/property14.webp";
+import threebrproperty15 from "@/assets/property15.webp";
+import threebrproperty16 from "@/assets/property16.webp";
+import threebrproperty17 from "@/assets/property17.webp";
+import threebrproperty18 from "@/assets/property18.webp";
+import threebrproperty19 from "@/assets/property19.webp";
+
+//2br apartment images
 import twobrproperty1 from "@/assets/2br-property1.webp";
 import twobrproperty2 from "@/assets/2br-property2.webp";
 import twobrproperty3 from "@/assets/2br-property3.webp";
@@ -70,7 +91,7 @@ export const properties = [
     name: "Bush Camp Experience",
     location: "Maasai Mara, Kenya",
     description: "Authentic safari camp with luxury amenities...",
-    images: [property3, property1, property2],
+    images: [threebrproperty1, threebrproperty2, threebrproperty3, threebrproperty4, threebrproperty5, threebrproperty6, threebrproperty7, threebrproperty8, threebrproperty9, threebrproperty10, threebrproperty11, threebrproperty12, threebrproperty13, threebrproperty14, threebrproperty15, threebrproperty16, threebrproperty17, threebrproperty18, threebrproperty19],
     price: "$380",
     guests: 2,
     bedrooms: 1,
