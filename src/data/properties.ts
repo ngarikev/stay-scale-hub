@@ -57,7 +57,7 @@ import twobrproperty17 from "@/assets/2br-property17.webp";
 
 export const properties = [
   {
-    id: "1",
+    id: "lgxe9j7u3fyn397",
     name: "Three bedroom apartment",
     location: "Nyali, Mombasa",
     description: "Luxury apartment with panoramic ocean views...",
@@ -72,7 +72,7 @@ export const properties = [
     featured: true
   },
   {
-    id: "2",
+    id: "ig8ih97jfx5wgyw",
     name: "Two bedroom apartment",
     location: "Nyali, Mombasa",
     description: "Stunning beachfront property...",
@@ -87,7 +87,7 @@ export const properties = [
     featured: false
   },
   {
-    id: "3",
+    id: "5bytmsnm8tm93kd",
     name: "Bush Camp Experience",
     location: "Maasai Mara, Kenya",
     description: "Authentic safari camp with luxury amenities...",

@@ -223,7 +223,7 @@ Message: ${formData.message}
               </div>
             </div>
 
-            <div>
+            {/* <div>
               <label className="block text-sm font-medium text-foreground mb-2">
                 Message
               </label>
@@ -234,7 +234,7 @@ Message: ${formData.message}
                 rows={4}
                 placeholder="Tell us about your travel plans, special requirements, or any questions you have..."
               />
-            </div>
+            </div> */}
           </div>
 
           <DialogFooter className="mt-4 shrink-0">
