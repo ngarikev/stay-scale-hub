@@ -28,7 +28,7 @@ const Navbar = () => {
             <div className="flex items-center space-x-2">
               <MapPin className="h-8 w-8 text-primary" />
               <span className="text-2xl font-bold text-foreground">
-                Azure Horizon Stays
+                OceanFront
               </span>
             </div>
           </div>

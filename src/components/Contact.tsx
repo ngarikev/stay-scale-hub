@@ -76,8 +76,8 @@ Message: ${formData.message}
     {
       icon: Mail,
       title: "Email",
-      details: "hello@safaristays.com",
-      action: () => window.open('mailto:hello@safaristays.com', '_self')
+      details: "help@oceanfront.com",
+      action: () => window.open('mailto:help@oceanfront.com', '_self')
     },
     {
       icon: MapPin,

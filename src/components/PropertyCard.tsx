@@ -1,8 +1,10 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Users, Bed, Bath, Wifi, Car, Star } from "lucide-react";
+import { MapPin, Users, Bed, Bath, Wifi, Car, Star, CableCar, WavesIcon, Shell, AirVent, Dumbbell } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
+
+
 
 interface PropertyCardProps {
   id: string;
@@ -40,10 +42,15 @@ const PropertyCard = ({
     navigate("/property/:id")
 
   };
-
+  const truncatedDescription = description.length > 120 ? description.slice(0, 120) + "...." : description;
   const amenityIcons: { [key: string]: any } = {
     "Wi-Fi": Wifi,
-    Parking: Car,
+    "Free Parking": Car,
+    "Elevator": CableCar,
+    "Swimming pool": WavesIcon,
+    "Beach Access": Shell,
+    "AC": AirVent,
+    "Shared gym in building": Dumbbell
   };
 
   return (
@@ -89,7 +96,7 @@ const PropertyCard = ({
           </div>
 
           <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
-            {description}
+            {truncatedDescription}
           </p>
 
           <div className="flex items-center space-x-4 mb-4 text-sm text-muted-foreground">

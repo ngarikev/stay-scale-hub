@@ -32,7 +32,7 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-2 mb-6">
               <MapPin className="h-8 w-8 text-golden" />
-              <span className="text-2xl font-bold">Azure Horizon Stays</span>
+              <span className="text-2xl font-bold">OceanFront</span>
             </div>
             <p className="text-white/80 mb-6 leading-relaxed">
               Experience the heart of East Africa with our carefully curated luxury accommodations. 
@@ -115,10 +115,10 @@ const Footer = () => {
                 <div>
                   <p className="text-white/80 text-sm">Email</p>
                   <button 
-                    onClick={() => window.open('mailto:hello@azurehorizontays.com', '_self')}
+                    onClick={() => window.open('mailto:help@oceanfront.com', '_self')}
                     className="text-white hover:text-golden transition-colors"
                   >
-                    hello@azurehorizonstays.com
+                    help@oceanfront.com
                   </button>
                 </div>
               </div>
@@ -138,7 +138,7 @@ const Footer = () => {
         <div className="border-t border-white/10 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-white/60 text-sm">
-              © {currentYear} Azure Horizon Stays. All rights reserved.
+              © {currentYear} OceanFront. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
               <button className="text-white/60 hover:text-white transition-colors">
