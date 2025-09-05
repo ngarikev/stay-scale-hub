@@ -100,7 +100,7 @@ function PrivacyPolicy() {
           </li>
         </ul>
         <p className="mt-2">
-          For privacy inquiries, contact us at <strong>0716 073 759</strong>.
+          For privacy inquiries, contact us at <strong>+254 716 073 759</strong>.
         </p>
       </Section>
     </article>
