@@ -208,7 +208,7 @@ function TermsOfService() {
       </Section>
 
       <p className="text-sm text-gray-600">
-        Need help? Call us on <strong>0716 073 759</strong>.
+        Need help? Call us on <strong>+254 716 073 759</strong>.
       </p>
     </article>
   );
@@ -254,7 +254,7 @@ function CancellationPolicy() {
       </Section>
 
       <p className="text-sm text-gray-600">
-        Questions about your booking? Contact <strong>0716 073 759</strong>.
+        Questions about your booking? Contact <strong>+254 716 073 759</strong>.
       </p>
     </article>
   );
