@@ -88,7 +88,7 @@ export const properties = [
   },
   {
     id: "5bytmsnm8tm93kd",
-    name: "Modern vibe | Oceanview | Pool | Walk to Beach Three bedroom apartment",
+    name: "Modern vibe | Oceanview | Pool | Walk to Beach | Three bedroom apartment",
     location: "Nyali Mombasa",
     description: "This modern apartment is located in Nyali on Baobab Road, this property combines comfort with easy access to the area’s best attractions. Guests can take in sweeping ocean views from the rooftop or explore the natural beauty of Haller Park nearby. Beach lovers will appreciate multiple access points, including Kingstone Lounge, Maasai Beach, and the lively Pirates Beach, all just a short walk away.",
     images: [threebrproperty1, threebrproperty2, threebrproperty3, threebrproperty4, threebrproperty5, threebrproperty6, threebrproperty7, threebrproperty8, threebrproperty9, threebrproperty10, threebrproperty11, threebrproperty12, threebrproperty13, threebrproperty14, threebrproperty15, threebrproperty16, threebrproperty17, threebrproperty18, threebrproperty19],
