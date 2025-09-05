@@ -95,7 +95,7 @@ function PrivacyPolicy() {
         <ul className="list-disc pl-5 space-y-1">
           <li>Request access, correction, or update of your personal data.</li>
           <li>
-            Request deletion after your stay, subject to legal record‑keeping obligations (e.g., tax and
+            Request deletion after your stay, subject to legal record keeping obligations (e.g., tax and
             payment records).
           </li>
         </ul>
@@ -129,7 +129,7 @@ function TermsOfService() {
 
       <Section title="Identification & Payment">
         <ul className="list-disc pl-5 space-y-1">
-          <li>A valid government‑issued ID (passport, national ID, or digital ID) is required at check‑in.</li>
+          <li>A valid government issued ID (passport, national ID, or digital ID) is required at check‑in.</li>
           <li>Full payment is required at check‑in to complete your reservation.</li>
         </ul>
       </Section>
@@ -189,7 +189,7 @@ function TermsOfService() {
           <li>Offline bookings: free cancellation up to <strong>48 hours</strong> before check‑in.</li>
           <li>
             Cancellations within <strong>24 hours</strong> of check‑in, or after check‑in, are
-            <strong> non‑refundable</strong>.
+            <strong> nonrefundable</strong>.
           </li>
         </ul>
       </Section>
@@ -237,10 +237,10 @@ function CancellationPolicy() {
             <strong>48+ hours before check‑in:</strong> Full refund.
           </li>
           <li>
-            <strong>Within 24 hours of check‑in:</strong> Non‑refundable.
+            <strong>Within 24 hours of check‑in:</strong> Nonrefundable.
           </li>
           <li>
-            <strong>After check‑in:</strong> Non‑refundable; early departures are not refunded.
+            <strong>After check‑in:</strong> Nonrefundable; early departures are not refunded.
           </li>
         </ul>
       </Section>
@@ -249,7 +249,7 @@ function CancellationPolicy() {
         <ul className="list-disc pl-5 space-y-1">
           <li>Approved refunds are issued within <strong>7 business days</strong>.</li>
           <li>Refunds are processed via the original payment method (M‑Pesa, card, PayPal).</li>
-          <li>No‑shows are not eligible for refunds.</li>
+          <li>No shows are not eligible for refunds.</li>
         </ul>
       </Section>
 
@@ -279,7 +279,7 @@ export default function PoliciesPage() {
   return (
     <main className="max-w-4xl mx-auto p-4 md:p-8">
       <header className="mb-6">
-        <h1 className="text-2xl md:text-3xl font-bold">Policies — Oceanfront Homes Apartments</h1>
+        <h1 className="text-2xl md:text-3xl font-bold">Policies: Oceanfront Homes Apartments</h1>
         <p className="text-gray-600 mt-1 text-sm md:text-base">
           Please review the policies below before and during your stay.
         </p>
