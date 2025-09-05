@@ -1,4 +1,13 @@
-import { MapPin, Phone, Mail, MessageCircle, Instagram, Facebook, Twitter } from "lucide-react";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  MessageCircle,
+  Instagram,
+  Facebook,
+  Twitter,
+} from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -12,16 +21,16 @@ const Footer = () => {
 
   const destinations = [
     "Serengeti, Tanzania",
-    "Zanzibar, Tanzania", 
+    "Zanzibar, Tanzania",
     "Maasai Mara, Kenya",
     "Amboseli, Kenya",
     "Bwindi, Uganda",
-    "Queen Elizabeth, Uganda"
+    "Queen Elizabeth, Uganda",
   ];
 
   const scrollToSection = (href: string) => {
-    const element = document.getElementById(href.replace('#', ''));
-    element?.scrollIntoView({ behavior: 'smooth' });
+    const element = document.getElementById(href.replace("#", ""));
+    element?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -35,8 +44,9 @@ const Footer = () => {
               <span className="text-2xl font-bold">OceanFront</span>
             </div>
             <p className="text-white/80 mb-6 leading-relaxed">
-              Experience the heart of East Africa with our carefully curated luxury accommodations. 
-              From safari lodges to coastal retreats, we offer authentic experiences with world-class comfort.
+              Experience the heart of East Africa with our carefully curated
+              luxury accommodations. From safari lodges to coastal retreats, we
+              offer authentic experiences with world-class comfort.
             </p>
             <div className="flex space-x-4">
               <button className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors">
@@ -53,11 +63,13 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 text-golden">Quick Links</h3>
+            <h3 className="text-lg font-semibold mb-6 text-golden">
+              Quick Links
+            </h3>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <button 
+                  <button
                     onClick={() => scrollToSection(link.href)}
                     className="text-white/80 hover:text-white transition-colors"
                   >
@@ -70,7 +82,9 @@ const Footer = () => {
 
           {/* Destinations */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 text-golden">Destinations</h3>
+            <h3 className="text-lg font-semibold mb-6 text-golden">
+              Destinations
+            </h3>
             <ul className="space-y-3">
               {destinations.map((destination) => (
                 <li key={destination}>
@@ -82,47 +96,53 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 text-golden">Contact Us</h3>
+            <h3 className="text-lg font-semibold mb-6 text-golden">
+              Contact Us
+            </h3>
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
                 <Phone className="h-5 w-5 text-golden mt-0.5" />
                 <div>
                   <p className="text-white/80 text-sm">Phone</p>
-                  <button 
-                    onClick={() => window.open('tel:+254716073759', '_self')}
+                  <button
+                    onClick={() => window.open("tel:+254716073759", "_self")}
                     className="text-white hover:text-golden transition-colors"
                   >
                     +254716073759
                   </button>
                 </div>
               </div>
-              
+
               <div className="flex items-start space-x-3">
                 <MessageCircle className="h-5 w-5 text-golden mt-0.5" />
                 <div>
                   <p className="text-white/80 text-sm">WhatsApp</p>
-                  <button 
-                    onClick={() => window.open('https://wa.me/+254716073759', '_blank')}
+                  <button
+                    onClick={() =>
+                      window.open("https://wa.me/+254716073759", "_blank")
+                    }
                     className="text-white hover:text-golden transition-colors"
                   >
                     Quick Response
                   </button>
                 </div>
               </div>
-              
+
               <div className="flex items-start space-x-3">
                 <Mail className="h-5 w-5 text-golden mt-0.5" />
                 <div>
                   <p className="text-white/80 text-sm">Email</p>
-                  <button 
-                    onClick={() => window.open('mailto:help@oceanfront.com', '_self')}
+                  <button
+                    onClick={() =>
+                      window.open("mailto:help@oceanfront.com", "_self")
+                    }
                     className="text-white hover:text-golden transition-colors"
                   >
                     help@oceanfront.com
                   </button>
                 </div>
               </div>
-              
+
               <div className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-golden mt-0.5" />
                 <div>
@@ -141,15 +161,24 @@ const Footer = () => {
               © {currentYear} OceanFront. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
-              <button className="text-white/60 hover:text-white transition-colors">
+              <Link
+                to="/policies?tab=privacy"
+                className="text-white/60 hover:text-white transition-colors"
+              >
                 Privacy Policy
-              </button>
-              <button className="text-white/60 hover:text-white transition-colors">
+              </Link>
+              <Link
+                to="/policies?tab=terms"
+                className="text-white/60 hover:text-white transition-colors"
+              >
                 Terms of Service
-              </button>
-              <button className="text-white/60 hover:text-white transition-colors">
+              </Link>
+              <Link
+                to="/policies?tab=cancellation"
+                className="text-white/60 hover:text-white transition-colors"
+              >
                 Cancellation Policy
-              </button>
+              </Link>
             </div>
           </div>
         </div>
