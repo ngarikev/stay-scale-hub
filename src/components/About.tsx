@@ -100,12 +100,12 @@ const About = () => {
             <h3 className="text-3xl font-bold text-foreground mb-6">Our Story</h3>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                OceanFront was born from our founder's deep love for East Africa and years of
+                OceanFront stay was born from our founder's deep love for East Africa and years of
                 traveling across Tanzania, Kenya, Ethiopia, and Uganda. After countless unforgettable experiences,
                 we realized the need for accommodations that truly capture the essence of this remarkable region.
               </p>
               <p>
-                Today, we work closely with local communities and property owners to ensure that every
+                Today, we work closely with local communities and property owners  across East Africa to ensure that every
                 stay not only exceeds your expectations but also contributes positively to the areas you visit.
                 From luxury safari lodges to coastal retreats, each property is hand-selected for its unique
                 character and commitment to sustainable tourism.

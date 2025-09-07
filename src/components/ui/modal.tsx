@@ -147,10 +147,11 @@ Message: ${formData.message}
                   className="w-full px-3 py-2 border border-input rounded-md bg-background text-foreground"
                 >
                   <option value="">Select a property</option>
-                  <option value="Safari Lodge Villa">Safari Lodge Villa</option>
-                  <option value="Coastal Retreat">Coastal Retreat</option>
-                  <option value="Bush Camp Experience">
-                    Bush Camp Experience
+                  <option value="Oceanfront Nyali -3BR">Oceanfront Nyali -3BR</option>
+                  <option value= "Oceanfront Nyali -2BR">Oceanfront Nyali -2BR</option>
+                  <option value="Seaview Escape Nyali -3BR">Seaview Escape Nyali -3BR</option>
+                  <option value="Nyali Oceanview -3BR">
+                    Nyali Oceanview -3BR
                   </option>
                   <option value="Other">Other / Multiple Properties</option>
                 </select>

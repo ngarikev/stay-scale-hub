@@ -42,7 +42,7 @@ const PropertyCard = ({
     navigate("/property/:id")
 
   };
-  const truncatedDescription = description.length > 120 ? description.slice(0, 120) + "...." : description;
+  const truncatedDescription = description.length > 80 ? description.slice(0, 80) + "...." : description;
   const amenityIcons: { [key: string]: any } = {
     "Wi-Fi": Wifi,
     "Free Parking": Car,

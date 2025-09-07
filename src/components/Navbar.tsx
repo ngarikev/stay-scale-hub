@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, MapPin, Phone, MessageCircle } from "lucide-react";
 import { Input } from "./ui/input";
+import Logo from "../assets/Logo.png"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,9 +27,9 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex items-center">
             <div className="flex items-center space-x-2">
-              <MapPin className="h-8 w-8 text-primary" />
+              <img src={Logo} alt="oceanfront stay logo" className="h-8 w-auto text-primary" />
               <span className="text-2xl font-bold text-foreground">
-                OceanFront
+                OceanFront Stay
               </span>
             </div>
           </div>
