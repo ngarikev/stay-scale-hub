@@ -28,9 +28,8 @@ function ImageGridCarousel({ images }: { images: string[] }) {
         <SwiperSlide key={i}>
           <div className="grid grid-cols-2 gap-4">
             {group.map((img, idx) => (
-              <Zoom>
+              <Zoom key={`img-${i}-${idx}`}>
                 <img
-                  key={idx}
                   src={img}
                   alt={`Property view ${i * 4 + idx + 3}`}
                   className="w-full h-44 lg:h-60 object-cover rounded-2xl"
