@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 
 
+
 interface PropertyCardProps {
   id: string;
   name: string;
@@ -42,6 +43,7 @@ const PropertyCard = ({
     navigate("/property/:id")
 
   };
+
   const truncatedDescription = description.length > 80 ? description.slice(0, 80) + "...." : description;
   const amenityIcons: { [key: string]: any } = {
     "Wi-Fi": Wifi,

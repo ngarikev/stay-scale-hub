@@ -5,58 +5,54 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { MapPin, Phone, Mail, MessageCircle, Clock, Globe } from "lucide-react";
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
-  const { toast } = useToast();
+  const form = useRef<HTMLFormElement | null>(null);
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    property: '',
-    checkIn: '',
-    checkOut: '',
-    guests: '',
-    message: ''
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Create WhatsApp message
-    const message = `
-*New Booking Inquiry*
-Name: ${formData.name}
-Email: ${formData.email}
-Phone: ${formData.phone}
-Subject: ${formData.subject}
-Property Interest: ${formData.property}
-Check-in: ${formData.checkIn}
-Check-out: ${formData.checkOut}
-Guests: ${formData.guests}
+    const serviceId = import.meta.env.VITE_SERVICE_ID;
+    const templateId = import.meta.env.VITE_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_PUBLIC_KEY;
 
-Message: ${formData.message}
-    `.trim();
-
-    const whatsappUrl = `https://wa.me/+254716073759?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
-
-    toast({
-      title: "Redirecting to WhatsApp",
-      description: "Your inquiry is being sent via WhatsApp for faster response.",
-    });
-
-    // Reset form
-    setFormData({
-      name: '', email: '', phone: '', subject: '', property: '',
-      checkIn: '', checkOut: '', guests: '', message: ''
-    });
+    emailjs
+      .sendForm(serviceId, templateId, form.current!, { publicKey })
+      .then(
+        () => {
+          toast.success("✅ Your message has been sent successfully!", {
+            position: "top-center",
+          });
+          setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+        },
+        (error) => {
+          console.error("FAILED...", error.text);
+          toast.error("❌ Message sending failed! Please try again.", {
+            position: "top-center",
+          });
+        }
+      );
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData(prev => ({
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     }));
   };
 
@@ -65,26 +61,26 @@ Message: ${formData.message}
       icon: Phone,
       title: "Phone",
       details: "+254716073759",
-      action: () => window.open('tel:+254716073759', '_self')
+      action: () => window.open("tel:+254716073759", "_self"),
     },
     {
       icon: MessageCircle,
       title: "WhatsApp",
       details: "Quick Response",
-      action: () => window.open('https://wa.me/+254716073759', '_blank')
+      action: () => window.open("https://wa.me/+254716073759", "_blank"),
     },
     {
       icon: Mail,
       title: "Email",
       details: "help@oceanfront.com",
-      action: () => window.open('mailto:help@oceanfront.com', '_self')
+      action: () => window.open("mailto:help@oceanfront.com", "_self"),
     },
     {
       icon: MapPin,
       title: "Based in",
       details: "Mombasa, Kenya",
-      action: null
-    }
+      action: null,
+    },
   ];
 
   return (
@@ -95,8 +91,8 @@ Message: ${formData.message}
             Ready for Your East African Adventure?
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Get in touch with us to plan your perfect stay. We're here to help you
-            create unforgettable memories in the heart of East Africa.
+            Get in touch with us to plan your perfect stay. We're here to help
+            you create unforgettable memories in the heart of East Africa.
           </p>
         </div>
 
@@ -117,7 +113,9 @@ Message: ${formData.message}
                       <info.icon className="h-5 w-5 text-primary mt-0.5" />
                     </div>
                     <div className="flex-1">
-                      <p className="font-medium text-foreground">{info.title}</p>
+                      <p className="font-medium text-foreground">
+                        {info.title}
+                      </p>
                       {info.action ? (
                         <button
                           onClick={info.action}
@@ -140,7 +138,9 @@ Message: ${formData.message}
                   <Clock className="h-5 w-5 text-primary mt-0.5" />
                   <div>
                     <p className="font-medium text-foreground">Response Time</p>
-                    <p className="text-muted-foreground text-sm">Usually within 2 hours</p>
+                    <p className="text-muted-foreground text-sm">
+                      Usually within 2 hours
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
@@ -160,11 +160,12 @@ Message: ${formData.message}
               <CardHeader>
                 <CardTitle>Send us a Message</CardTitle>
                 <p className="text-muted-foreground">
-                  Fill out the form below and we'll get back to you as soon as possible.
+                  Fill out the form below and we'll get back to you as soon as
+                  possible.
                 </p>
               </CardHeader>
               <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form ref={form} onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-foreground mb-2">
@@ -217,68 +218,7 @@ Message: ${formData.message}
                         placeholder=""
                       />
                     </div>
-                    {/* <div>
-                      <label className="block text-sm font-medium text-foreground mb-2">
-                        Property Interest
-                      </label>
-                      <select
-                        name="property"
-                        value={formData.property}
-                        onChange={handleChange}
-                        className="w-full px-3 py-2 border border-input rounded-md bg-background text-foreground"
-                      >
-                        <option value="">Select a property</option>
-                        <option value="Safari Lodge Villa">Safari Lodge Villa</option>
-                        <option value="Coastal Retreat">Coastal Retreat</option>
-                        <option value="Bush Camp Experience">Bush Camp Experience</option>
-                        <option value="Other">Other / Multiple Properties</option>
-                      </select>
-                    </div> */}
                   </div>
-                  {/* 
-                  <div className="grid md:grid-cols-3 gap-4">
-                    <div>
-                      <label className="block text-sm font-medium text-foreground mb-2">
-                        Check-in Date
-                      </label>
-                      <Input
-                        name="checkIn"
-                        type="date"
-                        value={formData.checkIn}
-                        onChange={handleChange}
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-foreground mb-2">
-                        Check-out Date
-                      </label>
-                      <Input
-                        name="checkOut"
-                        type="date"
-                        value={formData.checkOut}
-                        onChange={handleChange}
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-foreground mb-2">
-                        Number of Guests
-                      </label>
-                      <select
-                        name="guests"
-                        value={formData.guests}
-                        onChange={handleChange}
-                        className="w-full px-3 py-2 border border-input rounded-md bg-background text-foreground"
-                      >
-                        <option value="">Select guests</option>
-                        <option value="1">1 Guest</option>
-                        <option value="2">2 Guests</option>
-                        <option value="3">3 Guests</option>
-                        <option value="4">4 Guests</option>
-                        <option value="5">5 Guests</option>
-                        <option value="6+">6+ Guests</option>
-                      </select>
-                    </div>
-                  </div> */}
 
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
@@ -293,8 +233,13 @@ Message: ${formData.message}
                     />
                   </div>
 
-                  <Button type="submit" variant="hero" size="lg" className="w-full">
-                    Send Message via WhatsApp
+                  <Button
+                    type="submit"
+                    variant="hero"
+                    size="lg"
+                    className="w-full"
+                  >
+                    Submit
                   </Button>
                 </form>
               </CardContent>
@@ -302,6 +247,7 @@ Message: ${formData.message}
           </div>
         </div>
       </div>
+      <ToastContainer />
     </section>
   );
 };

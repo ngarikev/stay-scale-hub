@@ -4,8 +4,10 @@ import { Menu, X, MapPin, Phone, MessageCircle } from "lucide-react";
 import { Input } from "./ui/input";
 import Logo from "../assets/Logo.png"
 
-const Navbar = () => {
+
+const Navbar = ({ onSearch }: { onSearch: (value: string) => void }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [search, setSearch] = useState("");
 
   const navItems = [
     { name: "Home", href: "#home" },
@@ -14,11 +16,24 @@ const Navbar = () => {
     { name: "Contact", href: "#contact" },
   ];
 
+ 
+ 
+  
+
   const scrollToSection = (href: string) => {
     const element = document.getElementById(href.replace("#", ""));
     element?.scrollIntoView({ behavior: "smooth" });
     setIsOpen(false);
   };
+
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setSearch(value);
+    onSearch(value);
+
+  }
+
+
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-sm border-b border-border">
@@ -52,17 +67,10 @@ const Navbar = () => {
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
             <Input 
-             name="name" 
+            type="text" 
+             value={search}
+             onChange={handleSearch}
              placeholder="Search...." />
-            {/* <Button 
-              variant="ghost" 
-              size="sm"
-              onClick={() => window.open('tel:+254716073759', '_self')}
-              className="flex items-center space-x-1"
-            >
-              <Phone className="h-4 w-4" />
-              <span>Call</span>
-            </Button> */}
             <Button
               variant="golden"
               size="sm"
@@ -111,15 +119,6 @@ const Navbar = () => {
               <Input 
               name="name"  
               placeholder="Search...." />
-              {/* <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => window.open("tel:+254716073759", "_self")}
-                className="flex items-center space-x-2 w-full justify-start"
-              >
-                <Phone className="h-4 w-4" />
-                <span>Call Us</span>
-              </Button> */}
               <Button
                 variant="golden"
                 size="sm"

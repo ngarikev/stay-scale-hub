@@ -134,5 +134,7 @@ export const properties = [
     rating: 4.9,
     reviews: 43,
     featured: false
-  }
+  },
+  
+  
 ];
