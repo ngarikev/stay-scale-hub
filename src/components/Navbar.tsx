@@ -91,6 +91,7 @@ const Navbar = ({ onSearch }: { onSearch: (value: string) => void }) => {
               size="sm"
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center p-2"
+              aria-label={isOpen ? "Close menu" : "Open menu"}
             >
               {isOpen ? (
                 <X className="h-6 w-6" />
