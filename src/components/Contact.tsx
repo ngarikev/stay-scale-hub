@@ -3,7 +3,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
 import { MapPin, Phone, Mail, MessageCircle, Clock, Globe } from "lucide-react";
 import emailjs from "@emailjs/browser";
 import { useRef } from "react";
@@ -72,8 +71,8 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      details: "help@oceanfront.com",
-      action: () => window.open("mailto:help@oceanfront.com", "_self"),
+      details: "info@oceanfrontstay.com",
+      action: () => window.open("mailto:info@oceanfrontstay.com", "_self"),
     },
     {
       icon: MapPin,

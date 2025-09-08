@@ -41,7 +41,7 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-2 mb-6">
               <MapPin className="h-8 w-8 text-golden" />
-              <span className="text-2xl font-bold">OceanFront</span>
+              <span className="text-2xl font-bold">OceanFront Stay</span>
             </div>
             <p className="text-white/80 mb-6 leading-relaxed">
               Experience the heart of East Africa with our carefully curated
@@ -134,11 +134,11 @@ const Footer = () => {
                   <p className="text-white/80 text-sm">Email</p>
                   <button
                     onClick={() =>
-                      window.open("mailto:help@oceanfront.com", "_self")
+                      window.open("mailto:info@oceanfrontstay.com", "_self")
                     }
                     className="text-white hover:text-golden transition-colors"
                   >
-                    help@oceanfront.com
+                    info@oceanfrontstay.com
                   </button>
                 </div>
               </div>
