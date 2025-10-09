@@ -41,7 +41,7 @@ const PropertyCard = ({
   const propertyId = property_id || id; // ✅ fallback support
 
   const truncatedDescription =
-    description.length > 80 ? description.slice(0, 80) + "...." : description;
+    description.length > 30 ? description.slice(0, 30) + "...." : description;
 
   const amenityIcons: { [key: string]: any } = {
     "Wi-Fi": Wifi,
@@ -85,7 +85,7 @@ const PropertyCard = ({
           <div className="flex items-start justify-between mb-3">
             <h3 className="text-xl font-bold text-foreground">{name}</h3>
             <div className="text-right">
-              <div className="text-2xl font-bold text-primary">{price}</div>
+              <div className="text-1xl font-bold text-primary">{price}</div>
               <div className="text-sm text-muted-foreground">per night</div>
             </div>
           </div>
