@@ -13,7 +13,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import ImageGridCarousel from "@/components/ImageGridCarousel";
-import { DialogBookButton } from "@/components/ui/modal";
+import { Booking } from "@/components/Booking";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -98,7 +98,7 @@ useEffect(() => {
               <Star className="w-4 h-4 fill-luxury-gold text-luxury-gold" />
               <span className="font-medium">{property.rating ?? "New"}</span>
             </div>
-            <DialogBookButton />
+            <Booking />
           </div>
         </div>
       </div>

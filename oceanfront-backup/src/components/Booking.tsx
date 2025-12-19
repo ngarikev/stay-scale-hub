@@ -10,65 +10,84 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
-import { useToast } from "./use-toast";
-import { useState } from "react";
-import { Textarea } from "./textarea";
+import axios from "axios";
+// import { useToast } from "use-toast";
+import { useEffect, useState } from "react";
 
-export function DialogBookButton() {
-  const { toast } = useToast();
+const baseURL = "http://localhost:5000/api"
+
+export function Booking() {
+//   const { toast } = useToast();
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
     phone: "",
-    property: "",
+    passportNo: "",
+    propertyId: "",
     checkIn: "",
     checkOut: "",
     adults: "",
     children: "",
-    message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [properties, setProperties] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchProperties = async() =>{
+      try {
+        const res = await axios.get(`${baseURL}/properties`)
+        setProperties(res.data)
+      } catch (error) {
+        console.error("Error fetching properties:", error);
+      }
+    }
+    fetchProperties();
+  }, []);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Create WhatsApp message
-    const message = `
-*New Booking Inquiry*
-Name: ${formData.name}
-Email: ${formData.email}
-Phone: ${formData.phone}
-Property Interest: ${formData.property}
-Check-in: ${formData.checkIn}
-Check-out: ${formData.checkOut}
-Adults: ${formData.adults}
-Children: ${formData.children}
+    if (new Date(formData.checkOut) <= new Date(formData.checkIn)) {
+      alert("Check-out must be after check-in date");
+      return;
+    }
 
-Message: ${formData.message}
-    `.trim();
+    setLoading(true);
+    try {
+      const payload = {
+        property_id: Number(formData.propertyId),
+        phone: formData.phone,
+        passport_no: formData.passportNo,
+        check_in: formData.checkIn,
+        check_out: formData.checkOut,
+        adults: Number(formData.adults),
+        children: Number(formData.children),
+        status: "pending",
+      };
+      console.log("Submitting booking payload:", payload);
+      
+    const res = await axios.post(`${baseURL}/bookings`, payload)
 
-    const whatsappUrl = `https://wa.me/+254716073759?text=${encodeURIComponent(
-      message
-    )}`;
-    window.open(whatsappUrl, "_blank");
+     alert("Booking successfully submitted!");
 
-    toast({
-      title: "Redirecting to WhatsApp",
-      description:
-        "Your inquiry is being sent via WhatsApp for faster response.",
-    });
-
-    // Reset form
+     // Reset form after success
     setFormData({
-      name: "",
-      email: "",
+      passportNo: "",
       phone: "",
-      property: "",
+      propertyId: "",
       checkIn: "",
       checkOut: "",
       adults: "",
       children: "",
-      message: "",
     });
+    } catch (error: any) {
+      console.error("Booking submission failed:", error);
+      alert(
+        error.response?.data?.message ||
+          "An error occurred while submitting the booking."
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (
@@ -99,34 +118,6 @@ Message: ${formData.message}
             <div className="grid md:grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm font-medium text-foreground mb-2">
-                  Full Name *
-                </label>
-                <Input
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  placeholder="Your full name"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
-                  Email *
-                </label>
-                <Input
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  placeholder="your@email.com"
-                />
-              </div>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
                   Phone Number
                 </label>
                 <Input
@@ -138,26 +129,18 @@ Message: ${formData.message}
               </div>
               <div>
                 <label className="block text-sm font-medium text-foreground mb-2">
-                  Property Interest
+                  id-card no/passport no *
                 </label>
-                <select
-                  name="property"
-                  value={formData.property}
+                <Input
+                  name="passportNo"
+                  type="text"
+                  value={formData.passportNo}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 border border-input rounded-md bg-background text-foreground"
-                >
-                  <option value="">Select a property</option>
-                  <option value="Oceanfront Nyali -3BR">Oceanfront Nyali -3BR</option>
-                  <option value= "Oceanfront Nyali -2BR">Oceanfront Nyali -2BR</option>
-                  <option value="Seaview Escape Nyali -3BR">Seaview Escape Nyali -3BR</option>
-                  <option value="Nyali Oceanview -3BR">
-                    Nyali Oceanview -3BR
-                  </option>
-                  <option value="Other">Other / Multiple Properties</option>
-                </select>
+                  required
+                  placeholder="Enter your id/passport number"
+                />
               </div>
             </div>
-
             <div className="grid md:grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm font-medium text-foreground mb-2">
@@ -194,13 +177,12 @@ Message: ${formData.message}
                   onChange={handleChange}
                   className="w-full px-3 py-2 border border-input rounded-md bg-background text-foreground"
                 >
-                  <option value="">Select adults</option>
-                  <option value="1">1 Adult</option>
-                  <option value="2">2 Adults</option>
-                  <option value="3">3 Adults</option>
-                  <option value="4">4 Adults</option>
-                  <option value="5">5 Adults</option>
-                  <option value="6">6 Adults</option>
+                  <option value="">Select</option>
+                  {[...Array(10)].map((_, i) => (
+                    <option key={i + 1} value={i + 1}>
+                      {i + 1}
+                    </option>
+                  ))}
                 </select>
               </div>
               <div>
@@ -213,29 +195,36 @@ Message: ${formData.message}
                   onChange={handleChange}
                   className="w-full px-3 py-2 border border-input rounded-md bg-background text-foreground"
                 >
-                  <option value="">Select children</option>
-                  <option value="0">No Child</option>
-                  <option value="1">1 Child</option>
-                  <option value="2">2 Children</option>
-                  <option value="3">3 Children</option>
-                  <option value="4">4 Children</option>
-                  <option value="5">5 Children</option>
+                  {[...Array(10)].map((_, i) => (
+                    <option key={i} value={i}>
+                      {i}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+            <div className="grid md:grid-cols-1">
+
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-2">
+                  Property Interest
+                </label>
+                <select
+                  name="propertyId"
+                  value={formData.propertyId}
+                  onChange={handleChange}
+                  className="w-full px-3 py-2 border border-input rounded-md bg-background text-foreground"
+                >
+                <option value="">Select a property</option>
+                {properties.map((prop: any) => (
+                  <option key={prop.property_id} value={prop.property_id}>
+                    {prop.name}
+                  </option>
+                ))}
                 </select>
               </div>
             </div>
 
-            {/* <div>
-              <label className="block text-sm font-medium text-foreground mb-2">
-                Message
-              </label>
-              <Textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                rows={4}
-                placeholder="Tell us about your travel plans, special requirements, or any questions you have..."
-              />
-            </div> */}
           </div>
 
           <DialogFooter className="mt-4 shrink-0">
@@ -245,7 +234,7 @@ Message: ${formData.message}
               </Button>
             </DialogClose>
             <Button type="submit" variant="hero" size="lg" className="w-full">
-              Send Message via WhatsApp
+              Submit
             </Button>
           </DialogFooter>
         </DialogContent>

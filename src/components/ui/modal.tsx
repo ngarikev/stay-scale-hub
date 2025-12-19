@@ -83,11 +83,11 @@ Message: ${formData.message}
   };
   return (
     <Dialog>
-      <form onSubmit={handleSubmit} className="">
         <DialogTrigger asChild>
           <Button variant="hero">Reserve Now</Button>
         </DialogTrigger>
         <DialogContent className="max-w-sm sm:max-w-lg md:max-w-2xl lg:max-w-3xl w-full max-h-[90vh] flex flex-col">
+          <form onSubmit={handleSubmit} className="">
           <DialogHeader>
             <DialogTitle>Make Your Reservation Now</DialogTitle>
             <DialogDescription>
@@ -248,8 +248,8 @@ Message: ${formData.message}
               Send Message via WhatsApp
             </Button>
           </DialogFooter>
+          </form>
         </DialogContent>
-      </form>
     </Dialog>
   );
 }
