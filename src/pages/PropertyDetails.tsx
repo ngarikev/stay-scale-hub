@@ -155,20 +155,20 @@ const PropertyDetail = () => {
                   </span>
                   <span className="text-muted-foreground">per night</span>
                 </div>
-                <div className="flex items-center gap-1 mb-4">
+                {/* <div className="flex items-center gap-1 mb-4">
                   <Star className="w-5 h-5 fill-luxury-gold text-luxury-gold" />
                   <span className="font-medium">{property.rating}</span>
-                </div>
+                </div> */}
               </div>
 
-              <div className="space-y-4">
+              {/* <div className="space-y-4">
                 <Button className="w-full" variant="hero" size="lg">
                   Check Availability
                 </Button>
                 <Button className="w-full" variant="outline" size="lg">
                   Contact Host
                 </Button>
-              </div>
+              </div> */}
 
               <div className="mt-6 pt-6 border-t text-center text-sm text-muted-foreground">
                 You won't be charged yet
