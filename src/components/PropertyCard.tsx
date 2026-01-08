@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Users, Bed, Bath, Wifi, Car, Star, CableCar, WavesIcon, Shell, AirVent, Dumbbell } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
+//import Reviews from "@/components/Reviews/Reviews";
 
 
 
@@ -132,13 +133,13 @@ const PropertyCard = ({
               </Badge>
             )}
           </div>
-
           <Button onClick={handleBookNow} className="w-full" variant="hero">
             View Property
           </Button>
         </CardContent>
       </Card>
     </Link>
+    
   );
 };
 

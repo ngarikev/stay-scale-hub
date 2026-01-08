@@ -15,11 +15,17 @@ import { Badge } from "@/components/ui/badge";
 import { properties } from "@/data/properties";
 import ImageGridCarousel from "@/components/ImageGridCarousel";
 import { DialogBookButton } from "@/components/ui/modal";
+import ReviewList from "@/components/Reviews/ReviewsList";
+import ReviewDialogButton from "@/components/Reviews/ReviewDialogButton";
+import { useReviews } from "@/components/Reviews/useReviews";
+import AverageRating from "@/components/Reviews/AverageRating";
+
 
 const PropertyDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const property = properties.find((p) => p.id === id);
+  const { reviews, addReview } = useReviews(id || "");
 
   if (!property) {
     return (
@@ -37,6 +43,9 @@ const PropertyDetail = () => {
     Parking: Car,
     default: Star,
   };
+const hasReviewed = reviews.some(
+  r => r.userId === localStorage.getItem("userId")
+);
 
   return (
     <div className="min-h-screen bg-background">
@@ -54,9 +63,14 @@ const PropertyDetail = () => {
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-1">
               <Star className="w-4 h-4 fill-luxury-gold text-luxury-gold" />
-              <span className="font-medium">{property.rating}</span>
+      <AverageRating reviews={reviews} />
             </div>
             <DialogBookButton />
+            <ReviewDialogButton
+              apartmentId={property.id}
+              onAddReview={addReview}
+              disabled={hasReviewed}
+              />
           </div>
         </div>
       </div>
@@ -172,6 +186,22 @@ const PropertyDetail = () => {
 
               <div className="mt-6 pt-6 border-t text-center text-sm text-muted-foreground">
                 You won't be charged yet
+              </div>
+            </Card>
+
+            <Card className="card-elegant p-6 sticky top-32">
+              <div className="mb-6">
+                <div className="flex items-baseline gap-2 mb-4">
+                  <span className="text-3xl font-bold gradient-text">
+                    {property.reviews} Reviews
+                  </span>
+                </div>
+                <div>
+                <h2 className="text-2xl font-bold mb-4">Guest Reviews</h2>
+
+                  <ReviewList reviews={reviews} />
+                    </div>
+
               </div>
             </Card>
           </div>
